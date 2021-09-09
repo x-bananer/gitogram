@@ -9,5 +9,6 @@ export default {
 
 export const defaultView = () => ({
   components: { topline },
-  template: ' <topline /> '
+  // eslint-disable-next-line quotes
+  template: ` <topline /> `
 })

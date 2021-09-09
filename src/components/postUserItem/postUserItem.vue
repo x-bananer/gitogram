@@ -1,5 +1,5 @@
 <template>
-  <div class="c-post-user-item" @click="$emit('onPress')">
+  <div class="c-post-user-item" @click="$emit('оnPress')">
     <div class="user">
       <div class="user__header">
         <div class="avatar">

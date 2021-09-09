@@ -23,7 +23,7 @@
             <story-user-item
               :avatar="story.avatar"
               :username="story.username"
-              @onPress="handlePress(story.id)"
+              @handlePress="onPress(story.id)"
             >
               <!-- В реальном приложении будем передавать сюда данные с сервера -->
             </story-user-item>
@@ -42,7 +42,7 @@
           :likes="post.likes"
           :forks="post.forks"
           :date="post.date"
-          @onPress="handlePress(post.id)"
+          @handlePress="onPress(post.id)"
         >
           <!-- В реальном приложении будем передавать сюда данные с сервера -->
         </post-user-item>
