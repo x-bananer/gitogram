@@ -1,5 +1,4 @@
 <template>
-<p>{{ items }}</p>
   <div class="topline">
     <topline>
       <template #headline>
