@@ -1,0 +1,102 @@
+[
+  {
+    "id": "0",
+    "avatar": "https://i.imgur.com/D1Vg0Wg.png",
+    "username": "Josh",
+    "framework": "Vue.js",
+    "desc": "JavaScript framework for building interactive web applications ⚡",
+    "likes": "156k",
+    "forks":  "4",
+    "date": "15 MAY" 
+  },
+  {
+    "id": "1",
+    "avatar": "https://i.imgur.com/uCyvtkU.png",
+    "username": "Andrew",
+    "framework": "React.js",
+    "desc": "Open source JavaScript library used for designing user interfaces",
+    "likes": "156k",
+    "forks":  "4",
+    "date": "15 MAY" 
+  },
+  {
+    "id": "2",
+    "avatar": "https://i.imgur.com/s9je9FK.png",
+    "username": "Camille",
+    "framework": "Vue.js",
+    "desc": "JavaScript framework for building interactive web applications ⚡",
+    "likes": "156k",
+    "forks":  "4",
+    "date": "15 MAY" 
+  },
+  {
+    "id": "3",
+    "avatar": "https://i.imgur.com/FcRhDsf.png",
+    "username": "Marselle",
+    "framework": "React.js",
+    "desc": "Open source JavaScript library used for designing user interfaces",
+    "likes": "156k",
+    "forks":  "4",
+    "date": "15 MAY"   
+  },
+  {
+    "id": "4",
+    "avatar": "https://i.imgur.com/uCyvtkU.png",
+    "username": "Piter",
+    "framework": "Vue.js",
+    "desc": "JavaScript framework for building interactive web applications ⚡",
+    "likes": "156k",
+    "forks":  "4",
+    "date": "15 MAY" 
+  },
+  {
+    "id": "5",
+    "avatar": "https://i.imgur.com/IATF4HB.png",
+    "username": "Can",
+    "framework": "React.js",
+    "desc": "Open source JavaScript library used for designing user interfaces",
+    "likes": "156k",
+    "forks":  "4",
+    "date": "15 MAY"   
+  },
+  {
+    "id": "6",
+    "avatar": "https://i.imgur.com/bNRHaeW.png",
+    "username": "Iloveanime",
+    "framework": "Vue.js",
+    "desc": "JavaScript framework for building interactive web applications ⚡",
+    "likes": "156k",
+    "forks":  "4",
+    "date": "15 MAY"  
+  },
+  {
+    "id": "7",
+    "avatar": "https://i.imgur.com/6oIpPB8.png",
+    "username": "Diself",
+    "framework": "React.js",
+    "desc": "Open source JavaScript library used for designing user interfaces",
+    "likes": "156k",
+    "forks":  "4",
+    "date": "15 MAY" 
+  },
+  {
+    "id": "8",
+    "avatar": "https://i.imgur.com/9jpcG41.png",
+    "username": "Gartor",
+    "framework": "Vue.js",
+    "desc": "JavaScript framework for building interactive web applications ⚡",
+    "likes": "156k",
+    "forks":  "4",
+    "date": "15 MAY"  
+  },
+  {
+    "id": "9",
+    "avatar": "https://i.imgur.com/H3dWzbY.png",
+    "username": "Camilr",
+    "framework": "React.js",
+    "desc": "Open source JavaScript library used for designing user interfaces",
+    "likes": "156k",
+    "forks":  "4",
+    "date": "15 MAY" 
+  }
+]
