@@ -9,7 +9,8 @@
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "webpack": "webpack"
   },
   "main": "index.js",
   "dependencies": {
@@ -40,10 +41,13 @@
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^7.0.0",
     "node-sass": "^4.12.0",
+    "sass": "^1.39.0",
     "sass-loader": "^8.0.2",
     "typescript": "~3.9.3",
     "vue-jest": "^5.0.0-0",
-    "vue-loader": "^16.5.0"
+    "vue-loader": "^16.5.0",
+    "vue-loader-v16": "^16.5.0",
+    "webpack": "^4.46.0"
   },
   "_id": "gitogram@1.0.0",
   "license": "MIT",
