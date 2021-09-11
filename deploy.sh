@@ -7,7 +7,7 @@ set -e
 npm run build
 
 # переход в каталог сборки
-cd dist
+cd src
 
 # если вы публикуете на пользовательский домен
 # echo 'www.example.com' > CNAME
@@ -16,7 +16,7 @@ git init
 git add -A
 git commit -m 'deploy'
 
-# если вы публикуете по адресу https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:x-bananer/x-bananer.github.io.github.io.git master:gh-pages
+# если вы публикуете по адресу https://<USERNAME>.github.io
+git push -f git@github.com:x-bananer/gitogram.github.io.git master
 
 cd -

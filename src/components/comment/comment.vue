@@ -1,8 +1,8 @@
 <template>
 <div class="c-comment">
   <p>
-    <span class="username">{{username}}</span>
-    {{ text }}
+    <span class="username">{{ username }}</span>
+    <span class="text">{{ text }}</span>
   </p>
 </div>
 </template>

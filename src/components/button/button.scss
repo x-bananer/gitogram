@@ -1,0 +1,18 @@
+.btn-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
+  background: #31AE54;
+  border-radius: 5px;
+
+  color: #FFFFFF;
+
+  width: 270px;
+  height: 45px;
+  transition: 1s;
+
+  font-weight: bold;
+  font-size: 16px;
+}

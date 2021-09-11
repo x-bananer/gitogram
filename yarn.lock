@@ -1753,6 +1753,26 @@
   "resolved" "https://registry.npmjs.org/@storybook/addon-measure/-/addon-measure-2.0.0.tgz"
   "version" "2.0.0"
 
+"@storybook/addon-storysource@^6.3.8":
+  "integrity" "sha512-Yw07zGWWCOUQcvWwtEsasHJ4LqRhx7fcHBkbI5jXNb4SjB6LYDpStPDDD+Oa5uW+CO0gOuSv5U/e/xqC17Tl3w=="
+  "resolved" "https://registry.npmjs.org/@storybook/addon-storysource/-/addon-storysource-6.3.8.tgz"
+  "version" "6.3.8"
+  dependencies:
+    "@storybook/addons" "6.3.8"
+    "@storybook/api" "6.3.8"
+    "@storybook/client-logger" "6.3.8"
+    "@storybook/components" "6.3.8"
+    "@storybook/router" "6.3.8"
+    "@storybook/source-loader" "6.3.8"
+    "@storybook/theming" "6.3.8"
+    "core-js" "^3.8.2"
+    "estraverse" "^5.2.0"
+    "loader-utils" "^2.0.0"
+    "prettier" "~2.2.1"
+    "prop-types" "^15.7.2"
+    "react-syntax-highlighter" "^13.5.3"
+    "regenerator-runtime" "^0.13.7"
+
 "@storybook/addon-toolbars@6.3.8":
   "integrity" "sha512-jo9w3/TjYSYapSzTluVJzeeATzxf85KpPA/MjuqHl4MvTA1R7ApckZOsfRDcql6xrGEYUfGjUF6MRIicuxojeg=="
   "resolved" "https://registry.npmjs.org/@storybook/addon-toolbars/-/addon-toolbars-6.3.8.tgz"
@@ -2228,7 +2248,7 @@
     "core-js" "^3.6.5"
     "find-up" "^4.1.0"
 
-"@storybook/source-loader@6.3.8":
+"@storybook/source-loader@^6.3.8", "@storybook/source-loader@6.3.8":
   "integrity" "sha512-aQ3mrpxpVB2w7sST4jbQUBgHLQZTLD0H1SgohHSuNPz2nrYieuxmOfwjbJr1ZCtuZDCi5xyLjDgUJ3wZ1hPsfQ=="
   "resolved" "https://registry.npmjs.org/@storybook/source-loader/-/source-loader-6.3.8.tgz"
   "version" "6.3.8"

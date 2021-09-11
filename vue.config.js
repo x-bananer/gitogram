@@ -5,5 +5,5 @@ module.exports = {
 }
 
 module.exports = {
-  publicPath: '/x-bananer.github.io/'
+  publicPath: '/gitogram/'
 }
