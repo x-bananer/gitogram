@@ -11,17 +11,21 @@ export default {
 }
 
 const template = (args) => ({
-  components: { xButon: button },
+  components: { xButton: button },
   data () {
     return { args }
   },
   template: `
-    <button v-bind='args'>Follow<button>
-  `
+     <x-button v-bind="args">Follow</x-button>
+   `
 })
 
-export const Default = template.bind({})
+export const DefaultView = template.bind({})
 
-Default.args = {
+DefaultView.story = {
+  name: 'Стандартный вид'
+}
+
+DefaultView.args = {
   hoverText: 'Unfollow'
 }

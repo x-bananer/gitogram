@@ -13,23 +13,7 @@ export default {
   }
 }
 
-export const defaultView = () => ({
-  components: {
-    storyUserItem
-  },
-  template: `
-    <storyUserItem
-      avatar='https://picsum.photos/100/100'
-      username='Username'
-    />
-  `
-})
-
-defaultView.story = {
-  name: 'Non-clickable story'
-}
-
-export const ViewWithPress = (args) => ({
+export const defaultView = (args) => ({
   components: {
     storyUserItem
   },
@@ -47,6 +31,6 @@ export const ViewWithPress = (args) => ({
   `
 })
 
-ViewWithPress.story = {
-  name: 'Clickable story'
+defaultView.story = {
+  name: 'Стандартный вид'
 }

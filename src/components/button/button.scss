@@ -1,18 +1,28 @@
-.btn-text {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  
-  background: #31AE54;
-  border-radius: 5px;
-
-  color: #FFFFFF;
-
-  width: 270px;
-  height: 45px;
-  transition: 1s;
-
+.c-button {
   font-weight: bold;
   font-size: 16px;
+  text-align: center;
+  color: #FFF;
+  border-radius: 5px;
+  width: 270px;
+  height: 45px;
+  transition: .2s;
+
+  &.theme-green {
+    background: #31AE54;
+  }
+
+  &.theme-green:hover {
+    background: #9E9E9E;
+  }
+  &.hover-text:hover:after {
+    font-size: inherit;
+  }
+  &.hover-text::after {
+    content: attr(data-hover-text);
+    font-size: 0;
+  }
+  &.hover-text:hover .btn-text {
+    font-size: 0;
+  }
 }

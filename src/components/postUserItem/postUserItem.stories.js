@@ -28,3 +28,7 @@ export const defaultView = () => ({
     </post-user-item>
   `
 })
+
+defaultView.story = {
+  name: 'Стандартный вид'
+}

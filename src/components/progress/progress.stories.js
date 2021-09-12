@@ -20,3 +20,7 @@ const template = (args) => ({
 })
 
 export const Default = template.bind({})
+
+Default.story = {
+  name: 'Стандартный вид'
+}

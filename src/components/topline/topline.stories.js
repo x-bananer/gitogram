@@ -15,10 +15,8 @@ export const defaultView = () => ({
   template: `
     <topline>
       <template #headline>
-        <p> One </p>
       </template>
       <template #content>
-        <p> Two </p>
       </template>
     </topline>
   `

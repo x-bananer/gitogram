@@ -35,9 +35,9 @@
         </li>
       </ul>
     </div>
-    <div class="date">
+    <!-- <div class="date">
       {{ date }}
-    </div>
+    </div> -->
   </div>
 
 </template>
@@ -86,13 +86,13 @@ export default {
       required: true
     },
     forks: {
-      type: String,
-      required: true
-    },
-    date: {
-      type: String,
+      type: Number,
       required: true
     }
+    // date: {
+    //   type: String,
+    //   required: true
+    // }
   }
 }
 </script>

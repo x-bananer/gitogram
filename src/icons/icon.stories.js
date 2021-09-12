@@ -72,3 +72,47 @@ export const triangleView = () => ({
 triangleView.story = {
   name: 'Треугольник'
 }
+
+export const closeView = () => ({
+  components: { icon },
+  template: `
+    <icon name='close'>
+  `
+})
+
+closeView.story = {
+  name: 'Закрыть'
+}
+
+export const logoView = () => ({
+  components: { icon },
+  template: `
+    <icon name='logo'>
+  `
+})
+
+logoView.story = {
+  name: 'Логотип'
+}
+
+export const arrowView = () => ({
+  components: { icon },
+  template: `
+    <icon name='arrow'>
+  `
+})
+
+arrowView.story = {
+  name: 'Стрелка'
+}
+
+export const loadingView = () => ({
+  components: { icon },
+  template: `
+    <icon name='loading'>
+  `
+})
+
+loadingView.story = {
+  name: 'Загрузка'
+}

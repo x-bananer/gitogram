@@ -3,7 +3,7 @@
     <topline>
       <template #headline>
         <!-- Здесь вместо заголовка нужно вставить svg-логотип gitogram? Это отдельный компонент? -->
-        <h1>Gitogram /</h1>
+        <icon name="logo" />
         <div class="icons">
           <div class="icon">
             <icon name="home" />
@@ -19,10 +19,10 @@
       </template>
       <template #content>
         <ul class="stories">
-          <li class="stories__item" v-for="story in stories" :key="story.id">
+          <li class="stories__item" v-for="story in repositories" :key="story.id">
             <story-user-item
-              :avatar="story.avatar"
-              :username="story.username"
+              :avatar="story.owner.avatar_url"
+              :username="story.owner.login"
               @handlePress="onPress(story.id)"
             >
               <!-- В реальном приложении будем передавать сюда данные с сервера -->
@@ -33,15 +33,14 @@
     </topline>
   </div>
   <div class="container">
-    <div class="posts" v-for="post in posts" :key="post.id">
+    <div class="posts" v-for="repos in repositories" :key="repos.id">
         <post-user-item
-          :avatar="post.avatar"
-          :username="post.username"
-          :framework="post.framework"
-          :desc="post.desc"
-          :likes="post.likes"
-          :forks="post.forks"
-          :date="post.date"
+          :avatar="repos.owner.avatar_url"
+          :username="repos.owner.login"
+          :framework="repos.name"
+          :desc="repos.description"
+          :likes="repos.stargazers_count"
+          :forks="repos.forks_count"
           @handlePress="onPress(post.id)"
         >
           <!-- В реальном приложении будем передавать сюда данные с сервера -->
@@ -65,7 +64,7 @@ export default {
   async created () {
     try {
       const { data } = await api.trendings.getTrendings()
-      this.items = data.items
+      this.repositories = data.items
     } catch (error) {
       console.log(error)
     }
@@ -80,12 +79,21 @@ export default {
     return {
       stories,
       posts,
-      items: []
+      repositories: []
     }
   },
   methods: {
     toggle (isOpened) {
       this.shown = isOpened
+    },
+    getReposData (repos) {
+      return {
+        title: repos.name,
+        description: repos.description,
+        username: repos.owner.login,
+        stars: repos.stargazers_count,
+        forks: repos.forks_count
+      }
     }
   }
 }
