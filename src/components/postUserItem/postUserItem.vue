@@ -78,11 +78,11 @@ export default {
       required: true
     },
     desc: {
-      type: String,
+      type: null,
       required: true
     },
     likes: {
-      type: String,
+      type: Number,
       required: true
     },
     forks: {

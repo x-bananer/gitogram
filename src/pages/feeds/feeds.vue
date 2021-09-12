@@ -19,7 +19,7 @@
       </template>
       <template #content>
         <ul class="stories">
-          <li class="stories__item" v-for="story in repositories" :key="story.id">
+          <li class="stories__item" v-for="story in items" :key="story.id">
             <story-user-item
               :avatar="story.owner.avatar_url"
               :username="story.owner.login"
@@ -33,15 +33,15 @@
     </topline>
   </div>
   <div class="container">
-    <div class="posts" v-for="repos in repositories" :key="repos.id">
+    <div class="posts" v-for="item in items" :key="item.id">
         <post-user-item
-          :avatar="repos.owner.avatar_url"
-          :username="repos.owner.login"
-          :framework="repos.name"
-          :desc="repos.description"
-          :likes="repos.stargazers_count"
-          :forks="repos.forks_count"
-          @handlePress="onPress(post.id)"
+          :avatar="item.owner.avatar_url"
+          :username="item.owner.login"
+          :framework="item.name"
+          :desc="item.description"
+          :likes="item.stargazers_count"
+          :forks="item.forks_count"
+          @handlePress="onPress(item.id)"
         >
           <!-- В реальном приложении будем передавать сюда данные с сервера -->
         </post-user-item>
@@ -64,7 +64,7 @@ export default {
   async created () {
     try {
       const { data } = await api.trendings.getTrendings()
-      this.repositories = data.items
+      this.items = data.items
     } catch (error) {
       console.log(error)
     }
@@ -79,20 +79,20 @@ export default {
     return {
       stories,
       posts,
-      repositories: []
+      items: []
     }
   },
   methods: {
     toggle (isOpened) {
       this.shown = isOpened
     },
-    getReposData (repos) {
+    getItemData (item) {
       return {
-        title: repos.name,
-        description: repos.description,
-        username: repos.owner.login,
-        stars: repos.stargazers_count,
-        forks: repos.forks_count
+        title: item.name,
+        description: item.description,
+        username: item.owner.login,
+        stars: item.stargazers_count,
+        forks: item.forks_count
       }
     }
   }
