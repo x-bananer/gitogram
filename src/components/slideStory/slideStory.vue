@@ -48,4 +48,5 @@ export default {
 }
 </script>
 
- <style lang="scss" scoped src="./slideStory.scss"></style>
+ <style lang="scss" scoped src="./slideStory.scss">
+ </style>

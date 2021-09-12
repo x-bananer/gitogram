@@ -2,15 +2,14 @@
   <div class="topline">
     <topline>
       <template #headline>
-        <!-- Здесь вместо заголовка нужно вставить svg-логотип gitogram? Это отдельный компонент? -->
-        <icon name="logo" />
+        <logo />
+        <!-- <icon name="logo" /> -->
         <div class="icons">
           <div class="icon">
             <icon name="home" />
           </div>
           <div class="icon">
             <icon name="avatar" />
-            <!-- Здесь нужно динамично добавлять аватар пользоваля -->
           </div>
           <div class="icon">
             <icon name="exit" />
@@ -57,6 +56,7 @@ import { storyUserItem } from '../../components/storyUserItem'
 import stories from './data.json'
 import posts from './userData.json'
 import { postUserItem } from '../../components/postUserItem'
+import { logo } from '../../components/logo'
 
 import * as api from '../../api'
 
@@ -74,7 +74,8 @@ export default {
     topline,
     icon,
     storyUserItem,
-    postUserItem
+    postUserItem,
+    logo
   },
   data () {
     return {
