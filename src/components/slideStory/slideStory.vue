@@ -1,5 +1,5 @@
 <template>
-  <div class="c-slide">
+  <div class="c-slideStory">
     <div class="header">
       <div class="header__progress">
         <xProgress />
