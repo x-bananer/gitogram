@@ -41,6 +41,7 @@
           :desc="item.description"
           :likes="item.stargazers_count"
           :forks="item.forks_count"
+          :date="item.created_at"
           @handlePress="onPress(item.id)"
         >
           <!-- В реальном приложении будем передавать сюда данные с сервера -->
@@ -86,13 +87,14 @@ export default {
     toggle (isOpened) {
       this.shown = isOpened
     },
-    getItemData (item) {
+    getFeedData (item) {
       return {
         title: item.name,
         description: item.description,
         username: item.owner.login,
         stars: item.stargazers_count,
-        forks: item.forks_count
+        forks: item.forks_count,
+        date: item.created_at
       }
     }
   }
