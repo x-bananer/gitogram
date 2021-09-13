@@ -11,19 +11,19 @@
       </div>
     </header>
     <div class="content">
-      <stories-slider />
+      <slide-story />
     </div>
   </div>
 </template>
 
 <script>
-import { storiesSlider } from '../../components/storiesSlider'
+import { slideStory } from '../../components/slideStory'
 import { logo } from '../../components/logo'
 import { icon } from '../../icons'
 export default {
   name: 'storiesMain',
   components: {
-    storiesSlider,
+    slideStory,
     logo,
     icon
   },

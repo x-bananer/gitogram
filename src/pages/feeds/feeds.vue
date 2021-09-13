@@ -3,7 +3,6 @@
     <topline>
       <template #headline>
         <logo />
-        <!-- <icon name="logo" /> -->
         <div class="icons">
           <div class="icon">
             <icon name="home" />
@@ -24,7 +23,6 @@
               :username="story.owner.login"
               @handlePress="onPress(story.id)"
             >
-              <!-- В реальном приложении будем передавать сюда данные с сервера -->
             </story-user-item>
           </li>
         </ul>
@@ -43,7 +41,6 @@
           :date="item.created_at"
           @handlePress="onPress(item.id)"
         >
-          <!-- В реальном приложении будем передавать сюда данные с сервера -->
         </post-user-item>
     </div>
   </div>
