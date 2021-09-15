@@ -10,10 +10,10 @@
       <template #content>
         <ul class="stories">
           <li class="stories__item" v-for="story in this.trendings" :key="story.id">
-            <storyUserItem
+            <story-user-item
               :avatar="story.owner.avatar_url"
               :username="story.owner.login"
-              @onPress="$router.push({name: 'stories', params: {initialSlide: story.id}})"
+              @onPress="$router.push({name: 'stories', params: {initialSlider: story.id}})"
             />
           </li>
         </ul>

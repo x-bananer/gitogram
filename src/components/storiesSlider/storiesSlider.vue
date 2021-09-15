@@ -33,7 +33,7 @@ export default {
     slideStory
   },
   props: {
-    initialSlider: {
+    initialSlide: {
       type: Number
     }
   },
