@@ -2,101 +2,100 @@
   <div class="topline">
     <topline>
       <template #headline>
-        <logo />
-        <div class="icons">
-          <div class="icon">
-            <icon name="home" />
-          </div>
-          <div class="icon">
-            <icon name="avatar" />
-          </div>
-          <div class="icon">
-            <icon name="exit" />
-          </div>
+        <logo color='black'></logo>
+        <div class="topline__user-icons">
+          <profile></profile>
         </div>
       </template>
       <template #content>
         <ul class="stories">
-          <li class="stories__item" v-for="story in items" :key="story.id">
-            <story-user-item
+          <li class="stories__item" v-for="story in this.trendings" :key="story.id">
+            <storyUserItem
               :avatar="story.owner.avatar_url"
               :username="story.owner.login"
-              @handlePress="onPress(story.id)"
-            >
-            </story-user-item>
+              @onPress="$router.push({name: 'stories', params: {initialSlide: story.id}})"
+            />
           </li>
         </ul>
       </template>
     </topline>
   </div>
-  <div class="container">
-    <div class="posts" v-for="item in items" :key="item.id">
-        <post-user-item
-          :avatar="item.owner.avatar_url"
-          :username="item.owner.login"
-          :framework="item.name"
-          :desc="item.description"
-          :likes="item.stargazers_count"
-          :forks="item.forks_count"
-          :date="item.created_at"
-          @handlePress="onPress(item.id)"
-        >
-        </post-user-item>
-    </div>
-  </div>
+  <ul class="columns">
+    <li class="columns-item" v-for="items in this.trendings" :key="items.id">
+      <column
+        :username="items.owner.login"
+        :path="items.owner.avatar_url"
+        comments=""
+      >
+        <template #description>
+          <div class="column__content">
+            <div class="column__title" v-text="items.name"></div>
+            <div class="column__description" v-text="items.description"></div>
+            <div class="column__tools">
+              <tools
+                :star="items.stargazers_count"
+                :fork="items.forks_count"
+              />
+            </div>
+          </div>
+        </template>
+      </column>
+    </li>
+  </ul>
 </template>
 
 <script>
 import { topline } from '../../components/topline'
-import { icon } from '../../icons'
-import { storyUserItem } from '../../components/storyUserItem'
-import stories from './data.json'
-import posts from './userData.json'
-import { postUserItem } from '../../components/postUserItem'
 import { logo } from '../../components/logo'
-
-import * as api from '../../api'
+import { profile } from '../../components/profile'
+import { storyUserItem } from '../../components/storyUserItem'
+import { column } from '../../components/column'
+import { tools } from '../../components/tools'
+import { mapState, mapActions } from 'vuex'
 
 export default {
-  name: 'feeds',
-  async created () {
-    try {
-      const { data } = await api.trendings.getTrendings()
-      this.items = data.items
-    } catch (error) {
-      console.log(error)
-    }
-  },
+  name: 'Feeds',
   components: {
     topline,
-    icon,
+    logo,
+    profile,
     storyUserItem,
-    postUserItem,
-    logo
+    column,
+    tools
   },
   data () {
     return {
-      stories,
-      posts,
-      items: []
     }
   },
+  computed: {
+    ...mapState({
+      trendings: state => state.data
+    })
+  },
   methods: {
-    toggle (isOpened) {
-      this.shown = isOpened
-    },
-    getFeedData (item) {
+    ...mapActions({
+      fetchTrendings: 'fetchTrendings'
+    }),
+    getData (items) {
       return {
-        title: item.name,
-        description: item.description,
-        username: item.owner.login,
-        stars: item.stargazers_count,
-        forks: item.forks_count,
-        date: item.created_at
+        title: items.name,
+        description: items.description,
+        username: items.owner.login,
+        stars: items.stargazers_count
+      }
+    },
+    async created () {
+      try {
+        if (!this.trendings.length) {
+          await this.fetchTrendings()
+        }
+      } catch (error) {
+        console.log(error)
       }
     }
   }
 }
+
 </script>
 
 <style lang="scss" scoped src="./feeds.scss"></style>

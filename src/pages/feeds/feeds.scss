@@ -1,12 +1,11 @@
-.icons {
+.topline___header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
 }
 
-.icon{
-  cursor: pointer;
-  margin-right: 10px;
+.icon {
+  color: red;
+  width: 50px;
 }
 
 .stories {
@@ -14,8 +13,16 @@
   justify-content: space-between;
 }
 
-.posts {
-  max-width: 980px;
-  width: 100%;
-  margin: 0 auto;
+.column__title {
+  color: #292929;
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.column__description {
+  color: #404040;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 30px;
 }

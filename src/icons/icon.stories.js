@@ -116,3 +116,14 @@ export const loadingView = () => ({
 loadingView.story = {
   name: 'Загрузка'
 }
+
+export const authView = () => ({
+  components: { icon },
+  template: `
+    <icon name='auth'>
+  `
+})
+
+authView.story = {
+  name: 'Авторизация'
+}

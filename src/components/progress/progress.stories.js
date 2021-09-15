@@ -16,11 +16,11 @@ const template = (args) => ({
   data () {
     return { args }
   },
-  template: '<x-progress @onFinish="args.onFinish" />'
+  template: '<x-progress @onFinish="args.onFinish" active />'
 })
 
-export const Default = template.bind({})
+export const DefaultView = template.bind({})
 
-Default.story = {
+DefaultView.story = {
   name: 'Стандартный вид'
 }

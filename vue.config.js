@@ -1,9 +1,6 @@
 module.exports = {
-  devServer: {
-    proxy: 'https://localhost:8080'
-  }
-}
-
-module.exports = {
-  publicPath: '/gitogram/'
+  outputDir: 'docs',
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/gitogram/'
+    : '/'
 }

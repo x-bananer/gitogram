@@ -1,22 +1,21 @@
-import topline from './topline'
+import topline from './topline.vue'
 
 export default {
   title: 'Topline',
-  components: {
-    topline
-  }
+  component: topline
 }
 
 export const defaultView = () => ({
   components: {
     topline
   },
-  // eslint-disable-next-line quotes
   template: `
     <topline>
       <template #headline>
+        <h1>Headline</h1>
       </template>
       <template #content>
+      <p>Content</p>
       </template>
     </topline>
   `

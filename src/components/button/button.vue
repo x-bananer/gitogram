@@ -1,9 +1,16 @@
 <template>
   <button
-    :class="['c-button', `theme-green`, { 'hover-text': withHoverText }]"
+    :class="[
+    'c-button', `theme-green`,
+    { 'hover-text': withHoverText },
+    {'loading': loading}
+    ]"
     :data-hover-text="hoverText"
   >
-    <span class="btn-text">
+    <div class="button__loading" v-if="loading">
+      <spinner />
+    </div>
+    <span class="btn-text" v-else>
       <slot></slot>
     </span>
   </button>
@@ -11,11 +18,22 @@
 
 <script>
 
+import spinner from '../spinner/spinner.vue'
+
 export default {
   name: 'Button',
+  components: {
+    spinner
+  },
   props: {
     hoverText: {
       type: String
+    },
+    loading: {
+      type: Boolean
+    },
+    isDisabled: {
+      type: Boolean
     }
   },
   computed: {

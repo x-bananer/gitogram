@@ -8,4 +8,4 @@ export { default as close } from './close.vue'
 export { default as logo } from './logo.vue'
 export { default as arrow } from './arrow.vue'
 export { default as loading } from './loading.vue'
-// экспортируем сюда все иконки, которые есть в проекте
+export { default as auth } from './auth.vue'

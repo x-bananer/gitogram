@@ -15,5 +15,5 @@ export const defaultView = () => ({
 })
 
 defaultView.story = {
-  name: 'Логотип'
+  name: 'Стандартный вид'
 }

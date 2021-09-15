@@ -1,0 +1,39 @@
+.placeholder__top {
+  height: 136px;
+  width: 100%;
+  background: #DEDEDE;
+  border-radius: 4px;
+  margin-bottom: 22px;
+}
+
+.placeholder__item {
+  margin-bottom: 18px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.placeholder__first-paragraph {
+  height: 14px;
+  width: 70%;
+  background: #DEDEDE;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.placeholder__second-paragraph {
+  height: 14px;
+  width: 80%;
+  background: #DEDEDE;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.placeholder__third-paragraph {
+  height: 14px;
+  width: 60%;
+  background: #DEDEDE;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}

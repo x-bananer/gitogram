@@ -1,7 +1,7 @@
 <template>
-  <div class="wrapper">
+  <div class="c-stories">
     <header class="header">
-      <div class="x-container">
+      <div class="x-container header__section">
         <button class="logo" @click="$router.push('/')">
           <logo color="white" />
         </button>
@@ -11,19 +11,19 @@
       </div>
     </header>
     <div class="content">
-      <slide-story />
+      <storiesSlider :initialSlider="Number($route.params.initialSlide)" />
     </div>
   </div>
 </template>
 
 <script>
-import { slideStory } from '../../components/slideStory'
+import { storiesSlider } from '../../components/storiesSlider'
 import { logo } from '../../components/logo'
 import { icon } from '../../icons'
 export default {
-  name: 'storiesMain',
+  name: 'stories',
   components: {
-    slideStory,
+    storiesSlider,
     logo,
     icon
   },

@@ -1,5 +1,5 @@
 <template>
-<div class="icon">
+<div class="icon" :style='"color: " + color +";"'>
       <icon name="logo" />
     </div>
 </template>
