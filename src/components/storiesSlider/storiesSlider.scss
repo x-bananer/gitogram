@@ -1,13 +1,14 @@
-.stories-container {
+.c-stories-slider__container {
   height: 660px;
   position: relative;
 }
 
 .stories {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   position: absolute;
   left: 50%;
   margin-left: -190px;
   transition: .4s;
 }
+

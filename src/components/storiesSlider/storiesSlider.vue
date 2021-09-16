@@ -13,10 +13,10 @@
             :active="slideNdx === ndx"
             :loading="slideNdx === ndx && loading"
             :btnsShown="activeBtns"
-            @onNextSlide='handleSlide(ndx + 1)'
-            @onPrevSlide='handleSlide(ndx - 1)'
-            @onProgressFinish='handleSlideOnProgressFinish(ndx + 1)'
-           />
+            @onNextSlide="handleSlide(ndx + 1)"
+            @onPrevSlide="handleSlide(ndx - 1)"
+            @onProgressFinish="handleSlideOnProgressFinish(ndx + 1)"
+          />
         </li>
       </ul>
     </div>
@@ -47,7 +47,7 @@ export default {
   },
   computed: {
     ...mapState({
-      trendings: state => state.data
+      trendings: (state) => state.data
     }),
     activeBtns () {
       if (this.btnsShown === false) return []
@@ -101,6 +101,7 @@ export default {
       await this.loadReadme()
     },
     async handleSlideOnProgressFinish (slideNdx) {
+      console.log(this.trendings.length, slideNdx)
       if (this.trendings.length !== slideNdx) {
         this.moveSlider(slideNdx)
         await this.loadReadme()
@@ -121,3 +122,5 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped src="./storiesSlider.scss"></style>
