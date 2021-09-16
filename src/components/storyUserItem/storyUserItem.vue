@@ -11,6 +11,7 @@
 
 <script>
 export default {
+  name: 'StoryUserItem',
   props: {
     avatar: {
       type: String,

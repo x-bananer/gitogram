@@ -1,4 +1,4 @@
-import { makeRequest } from '../request'
+import { makeRequest } from '../request.js'
 
 const addStartingZero = (value) => value < 10 ? `0${value}` : value
 

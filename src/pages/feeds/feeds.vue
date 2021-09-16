@@ -10,10 +10,10 @@
       <template #content>
         <ul class="stories">
           <li class="stories__item" v-for="story in this.trendings" :key="story.id">
-            <story-user-item
+            <storyUserItem
               :avatar="story.owner.avatar_url"
               :username="story.owner.login"
-              @onPress="$router.push({name: 'stories', params: {initialSlider: story.id}})"
+              @onPress="$router.push({name: 'stories', params: {initialSlide: story.id}})"
             />
           </li>
         </ul>
@@ -46,9 +46,9 @@
 
 <script>
 import { topline } from '../../components/topline'
+import { storyUserItem } from '../../components/storyUserItem'
 import { logo } from '../../components/logo'
 import { profile } from '../../components/profile'
-import { storyUserItem } from '../../components/storyUserItem'
 import { column } from '../../components/column'
 import { tools } from '../../components/tools'
 import { mapState, mapActions } from 'vuex'
@@ -57,9 +57,9 @@ export default {
   name: 'Feeds',
   components: {
     topline,
+    storyUserItem,
     logo,
     profile,
-    storyUserItem,
     column,
     tools
   },
@@ -83,15 +83,15 @@ export default {
         username: items.owner.login,
         stars: items.stargazers_count
       }
-    },
-    async created () {
-      try {
-        if (!this.trendings.length) {
-          await this.fetchTrendings()
-        }
-      } catch (error) {
-        console.log(error)
+    }
+  },
+  async created () {
+    try {
+      if (!this.trendings.length) {
+        await this.fetchTrendings()
       }
+    } catch (error) {
+      console.log(error)
     }
   }
 }
