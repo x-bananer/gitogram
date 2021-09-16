@@ -10,7 +10,11 @@
         </li>
       </ul>
       <div class="placeholder" v-else>
-        <placeholder />
+        <ul class="list placeholder__list">
+          <li class="list__item placeholder__item placeholder__first-paragraph"></li>
+          <li class="list__item placeholder__item placeholder__second-paragraph"></li>
+          <li class="list__item placeholder__item placeholder__third-paragraph"></li>
+        </ul>
       </div>
     </div>
   </div>
@@ -19,15 +23,13 @@
 <script>
 import comment from '../comment/comment.vue'
 import toggler from '../toggler/toggler.vue'
-import placeholder from '../placeholder/placeholder.vue'
 
 export default {
   name: 'FeedComponent',
   props: ['comments'],
   components: {
     comment,
-    toggler,
-    placeholder
+    toggler
   },
   data () {
     return {

@@ -1,3 +1,31 @@
 .c-feed__toggler {
   margin-bottom: 14px;
 }
+
+.placeholder__first-paragraph {
+  height: 25px;
+  width: 60%;
+  background: linear-gradient(270deg, #FFFFFF -50%, rgba(255, 255, 255, 0) 100%), #EAEAEA;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.placeholder__second-paragraph {
+  height: 25px;
+  width: 40%;
+  background: linear-gradient(270deg, #FFFFFF -50%, rgba(255, 255, 255, 0) 100%), #EAEAEA;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.placeholder__third-paragraph {
+  height: 25px;
+  width: 20%;
+  background: linear-gradient(270deg, #FFFFFF -50%, rgba(255, 255, 255, 0) 100%), #EAEAEA;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.placeholder__item {
+  margin-bottom: 20px;
+}
