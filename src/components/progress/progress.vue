@@ -12,10 +12,10 @@ export default {
       finish: false
     }
   },
-  emits: ['onFinish'],
+  emits: ['onPtogressFinish'],
   methods: {
     emitOnFinish () {
-      this.$emit('onFinish')
+      this.$emit('onPtogressFinish')
     }
   },
   props: {

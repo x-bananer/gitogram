@@ -80,7 +80,7 @@ export default {
         10
       )
       this.slideNdx = slideNdx
-      this.sliderPosition = -(slideWidth * slideNdx)
+      this.sliderPosition = (-(slideWidth * slideNdx))
       slider.style.transform = `translateX(${this.sliderPosition}px)`
     },
     async loadReadme () {
@@ -109,9 +109,9 @@ export default {
     }
   },
   async mounted () {
-    if (this.initialSlider) {
+    if (this.initialSlide) {
       const ndx = this.trendings.findIndex(
-        (item) => item.id === this.initialSlider
+        (item) => item.id === this.initialSlide
       )
       await this.handleSlide(ndx)
     }
