@@ -1,5 +1,5 @@
 <template>
-  <div :class="active && finish ? 'active' : ''" class="c-progress">
+  <div :class="active ? 'active' : ''" class="c-progress">
     <div ref="indicator" class="indicator"></div>
   </div>
 </template>
@@ -12,10 +12,10 @@ export default {
       finish: false
     }
   },
-  emits: ['onPtogressFinish'],
+  emits: ['onFinish'],
   methods: {
     emitOnFinish () {
-      this.$emit('onPtogressFinish')
+      this.$emit('onFinish')
     }
   },
   props: {

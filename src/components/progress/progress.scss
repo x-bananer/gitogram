@@ -4,11 +4,12 @@
   border-radius: 10px;
   position: relative;
   overflow: hidden;
+  
 
   &.active {
     .indicator {
       width: 100%;
-      
+      transition: 5s;
     }
   }
 }
@@ -20,5 +21,4 @@
   left: 0;
   width: 0;
   background: #31AE54;
-  transition: 5s;
 }
