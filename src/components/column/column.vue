@@ -10,6 +10,7 @@
       <div class="column__feed">
         <feed :comments="comments"></feed>
       </div>
+      <div class="column__date">{{ date }}</div>
     </div>
   </div>
 </template>
@@ -20,7 +21,7 @@ import feed from '../feed/feed.vue'
 
 export default {
   name: 'Column',
-  props: ['username', 'path', 'comments'],
+  props: ['username', 'path', 'comments', 'date'],
   components: {
     user,
     feed

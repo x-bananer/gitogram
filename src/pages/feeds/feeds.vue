@@ -26,6 +26,7 @@
         :username="items.owner.login"
         :path="items.owner.avatar_url"
         comments=""
+        :date="items.created_at"
       >
         <template #description>
           <div class="column__content">
@@ -81,7 +82,8 @@ export default {
         title: items.name,
         description: items.description,
         username: items.owner.login,
-        stars: items.stargazers_count
+        stars: items.stargazers_count,
+        date: items.created_at
       }
     }
   },

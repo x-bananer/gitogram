@@ -4,7 +4,6 @@
       <icon name="home" />
     </button>
     <button class="icon user-icons__element">
-      <img class="user-icons__img" :src="src">
       <icon name="avatar" />
     </button>
     <button class="icon user-icons__element">

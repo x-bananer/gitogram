@@ -11,5 +11,19 @@
   font-weight: bold;
   font-size: 14px;
   line-height: 160%;
-  margin-bottom: 28px;
+  padding: 20px;
+  border: 1px solid #F1F1F1;
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.07);
+  border-radius: 10px;
+}
+
+.column__feed {
+  padding: 18px;
+}
+
+.column__date {
+  padding: 0px 0 25px 0;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: 400;
 }
