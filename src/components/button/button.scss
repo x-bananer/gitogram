@@ -1,28 +1,64 @@
 .c-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: bold;
   font-size: 16px;
+  line-height: 22px;
   text-align: center;
-  color: #FFF;
+  letter-spacing: -0.15px;
+  color: #FFFFFF;
   border-radius: 5px;
   width: 270px;
   height: 45px;
-  transition: .2s;
+  transition: 1s;
 
-  &.theme-green {
+  &.green {
     background: #31AE54;
   }
 
-  &.theme-green:hover {
+  &.green:hover {
     background: #9E9E9E;
   }
+
+  &.gray {
+    background: #9E9E9E;
+    ;
+  }
+
+  &.gray:hover {
+    background: #9E9E9E;
+  }
+
   &.hover-text:hover:after {
     font-size: inherit;
   }
+
   &.hover-text::after {
     content: attr(data-hover-text);
     font-size: 0;
   }
+
   &.hover-text:hover .btn-text {
     font-size: 0;
   }
+
+  &.loading.hover-text:hover .btn-text {
+    font-size: 0;
+  }
+
+  &.loading.hover-text::after {
+    font-size: 0;
+  }
+
+  &.small {
+    width: 115px;
+    height: 42px;
+  }
+}
+
+.button__loading {
+  width: 18px;
+  height: 18px;
+  color: #FFFFFF;
 }

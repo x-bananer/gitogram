@@ -3,7 +3,7 @@
     <ul class="tools">
       <li class="tools__item tools__item-star">
         <div class="star"><icon name="star" /></div> Star
-        </li>
+      </li>
       <li class="tools__item tools__item-likes">
         {{ star }}
       </li>

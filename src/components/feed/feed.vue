@@ -5,8 +5,8 @@
     </div>
     <div class="comments" v-if="shown">
       <ul class="comment__list" v-if="comments">
-        <li class="comment__item" v-for="(comm, ndx) in comments" :key="ndx">
-          <comment :username="comm.user" :text="comm.comment" />
+        <li class="comment__item" v-for="(com, ndx) in comments" :key="ndx">
+          <comment :text="com.comment" :username="com.nick" />
         </li>
       </ul>
       <div class="placeholder" v-else>
@@ -25,8 +25,9 @@ import comment from '../comment/comment.vue'
 import toggler from '../toggler/toggler.vue'
 
 export default {
-  name: 'FeedComponent',
+  name: 'Feed',
   props: ['comments'],
+  emits: ['toggleIssues'],
   components: {
     comment,
     toggler
@@ -39,6 +40,7 @@ export default {
   methods: {
     toggle (isOpened) {
       this.shown = isOpened
+      this.$emit('toggleIssues', isOpened)
     }
   }
 }

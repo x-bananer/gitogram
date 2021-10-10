@@ -4,12 +4,17 @@
       <template #headline>
         <logo color='black'></logo>
         <div class="topline__user-icons">
-          <profile></profile>
+          <profileTools
+            :source="this.user?.avatar_url"
+            @onLogout="logout"
+            @onUser="$router.push({name: 'profile'})"
+            @onHome="$router.push({name: 'feeds'})"
+          ></profileTools>
         </div>
       </template>
       <template #content>
         <ul class="stories">
-          <li class="stories__item" v-for="story in this.trendings" :key="story.id">
+          <li class="stories__item" v-for="story in getUnstarredOnly" :key="story.id">
             <storyUserItem
               :avatar="story.owner.avatar_url"
               :username="story.owner.login"
@@ -21,21 +26,22 @@
     </topline>
   </div>
   <ul class="columns">
-    <li class="columns-item" v-for="items in this.trendings" :key="items.id">
+    <li class="columns-item" v-for="repos in this.starred" :key="repos.id">
       <column
-        :username="items.owner.login"
-        :path="items.owner.avatar_url"
-        comments=""
-        :date="items.created_at"
+        :nick="repos.owner.login"
+        :path="repos.owner.avatar_url"
+        :comments="repos.issuesList"
+        @toggleIssues='toggleIssues(repos, $event)'
+        :date="repos.updated_at"
       >
         <template #description>
           <div class="column__content">
-            <div class="column__title" v-text="items.name"></div>
-            <div class="column__description" v-text="items.description"></div>
+            <div class="column__title" v-text="repos.name"></div>
+            <div class="column__description" v-text="repos.description"></div>
             <div class="column__tools">
               <tools
-                :star="items.stargazers_count"
-                :fork="items.forks_count"
+                :star="repos.stargazers_count"
+                :fork="repos.forks_count"
               />
             </div>
           </div>
@@ -49,10 +55,10 @@
 import { topline } from '../../components/topline'
 import { storyUserItem } from '../../components/storyUserItem'
 import { logo } from '../../components/logo'
-import { profile } from '../../components/profile'
+import { profileTools } from '../../components/profileTools'
 import { column } from '../../components/column'
 import { tools } from '../../components/tools'
-import { mapState, mapActions } from 'vuex'
+import { mapState, mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'Feeds',
@@ -60,7 +66,7 @@ export default {
     topline,
     storyUserItem,
     logo,
-    profile,
+    profileTools,
     column,
     tools
   },
@@ -70,20 +76,36 @@ export default {
   },
   computed: {
     ...mapState({
-      trendings: state => state.data
-    })
+      trendings: state => state.data,
+      starred: state => state.likedOfMe,
+      user: state => state.user
+    }),
+    ...mapGetters(['getUnstarredOnly'])
   },
   methods: {
     ...mapActions({
-      fetchTrendings: 'fetchTrendings'
+      fetchTrendings: 'fetchTrendings',
+      fetchLikedOfMe: 'fetchLikedOfMe',
+      fetchUser: 'fetchUser',
+      logout: 'logout',
+      fetchIssue: 'fetchIssue'
     }),
-    getData (items) {
+    getData (repos) {
       return {
-        title: items.name,
-        description: items.description,
-        username: items.owner.login,
-        stars: items.stargazers_count,
-        date: items.created_at
+        title: repos.name,
+        description: repos.description,
+        username: repos.owner.login,
+        stars: repos.stargazers_count,
+        date: repos.updated_at
+      }
+    },
+    async toggleIssues (repos, event) {
+      if (event && !Object.prototype.hasOwnProperty.call(repos, 'issuesList')) {
+        try {
+          await this.fetchIssue({ id: repos.id, owner: repos.owner.login, repo: repos.name })
+        } catch (error) {
+          console.log(error)
+        }
       }
     }
   },
@@ -92,6 +114,7 @@ export default {
       if (!this.trendings.length) {
         await this.fetchTrendings()
       }
+      await this.fetchLikedOfMe()
     } catch (error) {
       console.log(error)
     }

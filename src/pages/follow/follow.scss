@@ -1,0 +1,115 @@
+.topline__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sides {
+  display: flex;
+  height: auto;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.left {
+  flex: 0 0 33%;
+  border-right: 1px solid #D3D3D3;
+  padding-top: 40px;
+}
+
+.left__title {
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 28px;
+  color: #262626;
+  padding-bottom: 50px;
+}
+
+.right {
+  flex: 1;
+  padding-top: 40px;
+}
+
+.right__content {
+  padding-left: 74px;
+}
+
+.right__container-title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 36px;
+}
+
+.right__title {
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 28px;
+  color: #262626;
+  margin-right: 5px;
+}
+
+.right__countRepo {
+  color: #9E9E9E;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.right__container-loading {
+  display: flex;
+  justify-content: center;
+}
+
+.right__loading {
+  color: #31AE54;
+  width: 40px;
+  height: 40px;
+}
+
+.repos__item {
+  margin-bottom: 18px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.follow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user {
+  display: flex;
+  margin-bottom: 32px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.user__avatar {
+  width: 72px;
+  height: 72px;
+  margin-right: 18px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.user__avatar-img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.user__nickname {
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 6px; 
+  color: #262626;
+  letter-spacing: -0.1px;
+}
+.user__profile {
+  color: #9E9E9E;
+  font-weight: normal;
+  font-size: 12px;
+}

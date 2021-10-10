@@ -1,16 +1,16 @@
-import profile from './profile.vue'
+import profileTools from './profileTools.vue'
 
 export default {
-  title: 'Profile',
-  components: { profile }
+  title: 'ProfileTools',
+  components: { profileTools }
 }
 
 export const defaultView = () => ({
   components: {
-    profile
+    profileTools
   },
   template: `
-    <profile />
+    <profileTools />
   `
 })
 

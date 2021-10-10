@@ -1,11 +1,14 @@
 <template>
   <button
     :class="[
-    'c-button', `theme-green`,
-    { 'hover-text': withHoverText },
-    {'loading': loading}
+      'c-button', theme,
+      { 'hover-text': withHoverText },
+      { 'loading': loading },
+      {'small': isSmall},
     ]"
     :data-hover-text="hoverText"
+    :disabled="isDisabled"
+    @click="$emit('onClick')"
   >
     <div class="button__loading" v-if="loading">
       <spinner />
@@ -29,10 +32,16 @@ export default {
     hoverText: {
       type: String
     },
+    theme: {
+      type: String
+    },
     loading: {
       type: Boolean
     },
     isDisabled: {
+      type: Boolean
+    },
+    isSmall: {
       type: Boolean
     }
   },
@@ -44,4 +53,5 @@ export default {
 }
 
 </script>
- <style lang="scss" scoped src="./button.scss"></style>
+
+<style lang="scss" scoped src="./button.scss"></style>

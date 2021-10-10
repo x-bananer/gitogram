@@ -5,7 +5,7 @@
         <xProgress :active="active" @onFinish="$emit('onProgressFinish')"/>
       </div>
       <div class="header__user">
-        <user :name="data.username" :src="data.userAvatar"/>
+        <user :name="data.username" :source="data.userAvatar"/>
       </div>
     </div>
     <div class="content">
@@ -18,7 +18,14 @@
       </div>
     </div>
     <div class="footer">
-      <xButton hover-text="Unfollow">Follow</xButton>
+      <xButton
+        :theme="data.following.status ? 'gray' : 'green'"
+        :loading="data.following.loading"
+        @onClick="$emit(data.following.status ? 'onUnfollow' : 'onFollow', data.id)"
+        hover-text="Unfollow"
+      >
+        {{data.following.status ? 'Unfollow' : 'Follow'}}
+      </xButton>
     </div>
     <template v-if="active">
       <button
@@ -64,7 +71,8 @@ export default {
   emits: [
     'onNextSlide',
     'onPrevSlide',
-    'onProgressFinish'
+    'onProgressFinish',
+    'onFollow'
   ],
   props: {
     active: Boolean,
