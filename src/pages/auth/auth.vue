@@ -1,10 +1,12 @@
 <template>
   <div class="c-auth">
-    <div class="auth__title">
-      <icon name="logo" />
-    </div>
-    <div class="auth__text">
-      More than just one repository. This is our digital world
+    <div class="auth__desc">
+      <div class="auth__title">
+        <icon name="logo" />
+      </div>
+      <div class="auth__text">
+        More than just one repository. This is our digital world
+      </div>
     </div>
     <button class="btn-auth" @click="onAuth">
       <div class="btn-auth__content">
@@ -17,9 +19,6 @@
     <div class="auth__img">
       <img src="../../images/cover.png" alt="Gitogram" class="auth__ico" />
     </div>
-    <footer>
-      <div class="footer__text">© Gitogram from Loftschool</div>
-    </footer>
   </div>
 </template>
 
